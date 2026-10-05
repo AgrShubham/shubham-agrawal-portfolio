@@ -10,7 +10,7 @@ export const SecondaryProjects: React.FC = () => {
   const secondaryProjects = PROJECTS.filter((p) => !p.featured);
 
   return (
-    <section id="other-work" className="py-12 border-t border-slate-800/80 bg-[#080b11]">
+    <section id="other-work" className="py-12 border-t border-slate-800/80 bg-[#080b11]/75 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Toggle Bar */}

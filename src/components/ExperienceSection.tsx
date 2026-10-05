@@ -5,7 +5,7 @@ import { CertificateShowcase } from './CertificateShowcase';
 
 export const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="py-20 md:py-24 relative border-t border-slate-800/80 bg-[#06080e] scroll-mt-16">
+    <section id="experience" className="py-20 md:py-24 relative border-t border-slate-800/80 bg-[#06080e]/75 backdrop-blur-sm scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -7,17 +7,21 @@ import { ExperienceSection } from './components/ExperienceSection';
 import { SecondaryProjects } from './components/SecondaryProjects';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
+import { InteractiveBackground } from './components/InteractiveBackground';
 
 export function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#080b11] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300">
+    <div className="min-h-screen bg-[#080b11] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300 relative">
+      {/* Interactive Cybernetic Coordinate Grid & Luminescent Spotlight */}
+      <InteractiveBackground />
+
       {/* Sticky Top Navigation & Recruiter Fast-Bar */}
       <Header onOpenResume={() => setIsResumeOpen(true)} />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <ExperienceSection />
         <FlagshipSection />

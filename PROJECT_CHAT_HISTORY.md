@@ -33,6 +33,7 @@
    - [Turn 17: Adding 5th Technical Competency Pillar (Web & Mobile Responsive UI/UX)](#turn-17-adding-5th-technical-competency-pillar-web-&-mobile-responsive-uiux)
    - [Turn 18: Cross-Device Responsiveness Audit (6 Viewports) & Screen Recording Deliverables](#turn-18-cross-device-responsiveness-audit-6-viewports-&-screen-recording-deliverables)
    - [Turn 19: Comprehensive Project Chat History Documentation Generation](#turn-19-comprehensive-project-chat-history-documentation-generation)
+   - [Turn 20: Interactive Cybernetic Coordinate Grid & Luminescent Spotlight Implementation](#turn-20-interactive-cybernetic-coordinate-grid-&-luminescent-spotlight-implementation)
 3. [Master Architectural Decision Records (ADRs) Summary](#-3-master-architectural-decision-records-adrs-summary)
 4. [Complete Git Commit Log](#-4-complete-git-commit-log)
 5. [Current System State & Verification Checklist](#-5-current-system-state--verification-checklist)
@@ -1375,6 +1376,36 @@ _Action-oriented turn with automated tool execution._
 
 ---
 
+### Turn 20: Interactive Cybernetic Coordinate Grid & Luminescent Spotlight Implementation
+
+**Step Index:** `639`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> Add an Intractive backgroung for the whole site. First give me some suggestions then we shall secide which one to use
+
+#### 🤖 Engineering Response & Strategy:
+Presented 4 distinct, high-performance interactive background concepts tailored to Shubham's systems engineering narrative:
+1. **Option 1:** Distributed Network Mesh & UDP Ping (Interactive nodes, dynamic vector links, magnetic pull, and radar broadcast ping on click).
+2. **Option 2 (Selected):** Cybernetic Coordinate Grid & Luminescent Spotlight (Sleek Linear/Vercel-style blueprint grid, spring-damped dual-tone spotlight `#38bdf8` to `#6366f1`, precision crosshairs `+`, expanding coordinate click ripples, and ambient Lissajous drift).
+3. **Option 3:** Kinetic Vector Velocity Field (Fluid particle streams with aerodynamic cursor wake and momentum glide decay).
+4. **Option 4:** Kernel Memory Fabric & Hex Matrix (Dim floating hex offsets like `PORT:5002` and `user32.dll` with interactive proximity decoding).
+
+User selected **Option 2**. Engineered [InteractiveBackground.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/InteractiveBackground.tsx) using hardware-accelerated HTML5 Canvas with clamped DPR, spring-damped lerp cursor tracking (`0.075`), precision crosshairs `+`, expanding click shockwaves, and ambient Lissajous drift. Updated section backgrounds to translucent glass (`backdrop-blur-sm`) for smooth parallax. Verified with Puppeteer screenshot capture (0 console errors, 530ms build time).
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Interactive background concept selection`
+- `Create InteractiveBackground component`
+- `Add InteractiveBackground to App.tsx`
+- `Make ExperienceSection translucent`
+- `Make SkillsSection translucent`
+- `Make SecondaryProjects translucent`
+- `Make Footer translucent`
+- `Execute background visual verification`
+- `Capture projects section screenshot`
+
+---
+
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
 
 | ADR ID | Core Architectural Decision | Alternative Considered | Engineering Rationale | Status |
@@ -1392,6 +1423,7 @@ _Action-oriented turn with automated tool execution._
 | **ADR-011** | **Option 1 FAANG / SDE Executive Hero** | Casual landing page | Authoritative candidate name headline, ATS tag, formal executive summary, 5-pillar competency matrix | **Adopted** |
 | **ADR-012** | **Granular Conventional Commit Discipline** | Infrequent squash commits | Atomic git tracking of every minute detail, component, asset, and responsive tuning on `main` | **Adopted** |
 | **ADR-013** | **Automated Multi-Device Responsiveness Audit** | Manual eyeball inspection | Automated 6-viewport test with Puppeteer and local Chrome, producing screen recordings and 0px overflow | **Adopted** |
+| **ADR-014** | **Cybernetic Coordinate Grid & Spotlight** | Particle networks / 3D Three.js | Extremely low CPU/GPU footprint, zero scroll jank, Linear/Vercel executive Polish, preserves text contrast | **Adopted** |
 
 ---
 
@@ -1419,11 +1451,13 @@ c94bef6 feat(data): establish baseline candidate schema and raw content dossiers
 
 ## ✅ 5. Current System State & Verification Checklist
 
-- [x] **Production Build:** `tsc -b && vite build` completes in ~529ms with 0 errors (`dist/index.html` 1.93 kB, `index.js` 330 kB).
+- [x] **Production Build:** `tsc -b && vite build` completes in ~530ms with 0 errors (`dist/index.html` 1.93 kB, `index.js` 334 kB).
 - [x] **Development Server:** Actively running at `http://localhost:5173/` (HTTP 200 OK).
+- [x] **Interactive Cybernetic Background:** Full-viewport 60fps canvas with spring-damped luminescent spotlight, precision crosshairs, and coordinate ripple waves.
 - [x] **Horizontal Overflow:** Verified 0px across all 6 viewports (`375x812`, `414x896`, `768x1024`, `1024x768`, `1280x800`, `1920x1080`).
 - [x] **Screen Recordings:** Compiled and saved in `screen_recordings/` (`mobile_scroll_session.webp` / `.gif`, `desktop_scroll_session.webp` / `.gif`).
 - [x] **PDF Resume:** Static asset `public/Shubham_Agrawal_Resume.pdf` served with modal viewer and direct download.
 - [x] **Certifications:** 4 verified credentials in `public/certificates/` with bidirectional hover and lightbox modal.
 - [x] **Telemetry Inspector:** Real-time pointer tracking, 60fps rAF batching, and Socket.IO packet payload inspection active in Flagship #3.
 - [x] **Documentation Integrity:** [PORTFOLIO_MASTER_PLAN.md](file:///d:/PROJECTS/MyPortfolio2/PORTFOLIO_MASTER_PLAN.md), [HERO_REDESIGN_PLAN.md](file:///d:/PROJECTS/MyPortfolio2/HERO_REDESIGN_PLAN.md), and [PROJECT_CHAT_HISTORY.md](file:///d:/PROJECTS/MyPortfolio2/PROJECT_CHAT_HISTORY.md) fully up-to-date.
+

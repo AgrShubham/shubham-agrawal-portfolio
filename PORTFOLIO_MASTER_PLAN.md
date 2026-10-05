@@ -515,3 +515,15 @@ Organized specifically to reinforce the **"Systems + Modern Full-Stack"** dual a
   4. Verified document size (~91 KB, 1,430 lines) with complete markdown link accessibility.
 - **Verification:** File generated and validated. Production build remains cleanly verified (`dist/` generated with 0 errors in 529ms). Dev server active at `http://localhost:5173/`.
 
+### Entry 018: Interactive Cybernetic Coordinate Grid & Luminescent Spotlight Implemented
+- **Date:** October 5, 2026
+- **Action:** Based on user request and archetype selection (Option 2), designed and integrated a full-viewport, 60fps hardware-accelerated interactive canvas background in [InteractiveBackground.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/InteractiveBackground.tsx):
+  1. **Coordinate Blueprint Grid:** Subtle 48px coordinate grid with precision `+` crosshairs rendered at intersecting vertices under the spotlight.
+  2. **Luminescent Spotlight Physics:** Dual-tone radial gradient (electric cyan `#38bdf8` to deep indigo `#6366f1`) with spring-damped lerp interpolation (`0.075` damping factor) tracking the user cursor.
+  3. **Expanding Click Ripples:** Concentric dashed coordinate shockwaves expanding outward on pointer clicks/taps, illuminating intersecting grid lines.
+  4. **Ambient Idle Drift:** Lissajous oscillation smoothly sweeping the spotlight across the canvas when idle or on mobile touch viewports.
+  5. **Parallax & Translucency:** Updated section wrappers across `ExperienceSection`, `SkillsSection`, `SecondaryProjects`, and `Footer` with `backdrop-blur-sm` and translucent charcoal surfaces (`/75`–`/85`), creating a silky fixed-parallax depth effect during scrolling.
+  6. **Accessibility & Zero-Overhead:** `pointer-events-none` container ensures 0 interference with text selection, modals, or button interactions.
+- **Verification:** Verified with Puppeteer (`test_interactive_bg.cjs`). 0 console errors, 0 page errors. Production build verified with 0 errors in 530ms (`npm run build`). Dev server active at `http://localhost:5173/`.
+
+

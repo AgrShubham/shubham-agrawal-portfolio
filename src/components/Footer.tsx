@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="py-20 relative border-t border-slate-800 bg-[#05070b] scroll-mt-16">
+    <footer id="contact" className="py-20 relative z-10 border-t border-slate-800 bg-[#05070b]/80 backdrop-blur-sm scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main CTA Box */}
