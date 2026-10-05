@@ -467,3 +467,12 @@ Organized specifically to reinforce the **"Systems + Modern Full-Stack"** dual a
   4. **High-Contrast CTAs:** Introduced clean, solid actions (`Explore Technical Projects`, `Curriculum Vitae (PDF)`, `Copy Contact Email`).
   5. **Technical Competency Architecture:** Replaced 4 floating cards with a unified 4-pillar competency panel featuring rigorous systems terminology (`< 1 ms Latency`, `Zero Drivers via user32.dll SendInput`, `React 19 Core`, `Win / Mac / Linux`).
 - **Verification:** Production build passed cleanly in 541ms with 0 errors. Dev server live at `http://localhost:5173/`.
+
+### Entry 015: 5th Technical Competency Pillar Added (Web & Mobile Responsive UI/UX)
+- **Date:** October 5, 2026
+- **Action:** Based on user request, expanded the **Technical Competency Architecture** panel in [Hero.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/Hero.tsx) to 5 pillars by adding:
+  - **Category Badge:** `RESPONSIVE UI/UX` with `MonitorSmartphone` dual-device vector icon.
+  - **Core Metric:** `Web & Mobile`.
+  - **Technical Benchmark:** *Pixel-perfect responsive interfaces engineered for accessibility, fluid 60fps motion, and optimal UX across all viewports in React & React Native.*
+  - **Responsive Layout:** Upgraded grid to `grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5` with container width `max-w-5xl`. On 2-column mobile/tablet viewports, the 5th card spans cleanly across both columns (`sm:col-span-2 lg:col-span-1`).
+- **Verification:** Production build verified cleanly in 473ms with 0 errors. Dev server actively running at `http://localhost:5173/`.

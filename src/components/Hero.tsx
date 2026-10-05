@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, Copy, Check, ArrowDown, Activity, Cpu, Layers, FileText, ShieldCheck } from 'lucide-react';
+import { Terminal, Copy, Check, ArrowDown, Activity, Cpu, Layers, FileText, ShieldCheck, MonitorSmartphone } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
 interface HeroProps {
@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
       <div className="absolute top-10 right-10 w-72 h-72 bg-cyan-500/5 blur-[90px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           
           {/* Top Formal Credential Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-slate-300 mb-8 shadow-sm">
@@ -100,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <span className="text-[11px] text-slate-400">Verified Engineering Benchmarks</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
               {/* Pillar 1: Systems & Networking */}
               <div className="p-4 rounded-xl bg-[#080c14] border border-slate-800/90 hover:border-cyan-500/30 transition-colors">
                 <div className="flex items-center gap-2 text-cyan-400 mb-2">
@@ -146,6 +146,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <div className="text-lg font-bold text-white font-mono mb-1">Win / Mac / Linux</div>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Background daemons orchestrating real-time event streams across desktop platforms via Socket.IO.
+                </p>
+              </div>
+
+              {/* Pillar 5: Web & Mobile Responsive UI/UX */}
+              <div className="p-4 rounded-xl bg-[#080c14] border border-slate-800/90 hover:border-amber-500/30 transition-colors sm:col-span-2 lg:col-span-1">
+                <div className="flex items-center gap-2 text-amber-400 mb-2">
+                  <MonitorSmartphone className="w-4 h-4" />
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">Responsive UI/UX</span>
+                </div>
+                <div className="text-lg font-bold text-white font-mono mb-1">Web & Mobile</div>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Pixel-perfect responsive interfaces engineered for accessibility, fluid 60fps motion, and optimal UX across all viewports.
                 </p>
               </div>
             </div>
