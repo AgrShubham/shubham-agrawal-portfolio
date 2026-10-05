@@ -1,0 +1,78 @@
+[
+  {
+    "viewport": "01_mobile_375x812",
+    "device": "Mobile (iPhone 13/14)",
+    "resolution": "375x812",
+    "hasOverflow": false,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "overflowingElements": [
+      {
+        "tagName": "DIV",
+        "className": "absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-transparent blur-[120px] pointer-events-none rounded-full",
+        "id": "",
+        "right": 488,
+        "clientWidth": 375
+      }
+    ],
+    "mobileMenuPassed": true
+  },
+  {
+    "viewport": "02_mobile_large_414x896",
+    "device": "Mobile Large (iPhone Plus/Max)",
+    "resolution": "414x896",
+    "hasOverflow": false,
+    "scrollWidth": 414,
+    "clientWidth": 414,
+    "overflowingElements": [
+      {
+        "tagName": "DIV",
+        "className": "absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-transparent blur-[120px] pointer-events-none rounded-full",
+        "id": "",
+        "right": 507,
+        "clientWidth": 414
+      }
+    ],
+    "mobileMenuPassed": true
+  },
+  {
+    "viewport": "03_tablet_768x1024",
+    "device": "Tablet Portrait (iPad)",
+    "resolution": "768x1024",
+    "hasOverflow": false,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "overflowingElements": [],
+    "mobileMenuPassed": null
+  },
+  {
+    "viewport": "04_tablet_landscape_1024x768",
+    "device": "Tablet Landscape (iPad)",
+    "resolution": "1024x768",
+    "hasOverflow": false,
+    "scrollWidth": 1024,
+    "clientWidth": 1024,
+    "overflowingElements": [],
+    "mobileMenuPassed": null
+  },
+  {
+    "viewport": "05_desktop_1280x800",
+    "device": "Laptop (MacBook/Ultrabook)",
+    "resolution": "1280x800",
+    "hasOverflow": false,
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "overflowingElements": [],
+    "mobileMenuPassed": null
+  },
+  {
+    "viewport": "06_desktop_fhd_1920x1080",
+    "device": "Full HD Monitor (1080p)",
+    "resolution": "1920x1080",
+    "hasOverflow": false,
+    "scrollWidth": 1920,
+    "clientWidth": 1920,
+    "overflowingElements": [],
+    "mobileMenuPassed": null
+  }
+]

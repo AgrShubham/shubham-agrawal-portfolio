@@ -15,18 +15,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
       {/* Recruiter Fast-Bar Alert on top */}
       <div className="bg-gradient-to-r from-cyan-950/60 via-indigo-950/50 to-slate-900/80 px-4 py-1.5 text-xs border-b border-cyan-500/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
+          <div className="flex items-center gap-2 truncate">
+            <span className="relative flex h-2 w-2 flex-shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span className="text-slate-300 font-medium">
+            <span className="text-slate-300 font-medium text-[11px] sm:text-xs truncate">
               Actively seeking <strong className="text-emerald-400 font-semibold">SDE, Full-Stack & Systems</strong> roles
             </span>
-            <span className="hidden md:inline-block text-slate-500">• Open to Relocation & Remote</span>
+            <span className="hidden md:inline-block text-slate-500 text-xs">• Open to Relocation & Remote</span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-shrink-0">
             <a
               href="mailto:shubhamagrawal.code@gmail.com"
               className="text-slate-300 hover:text-cyan-400 flex items-center gap-1 transition-colors"
@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
       {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
-        <a href="#about" className="flex items-center gap-3 group">
+        <a href="#about" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono font-bold text-sm tracking-wider shadow-sm group-hover:border-cyan-400/60 transition-all">
             SA
           </div>
@@ -49,14 +49,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
             <div className="font-bold text-slate-100 text-sm tracking-tight flex items-center gap-1.5">
               {RESUME_DATA.personal.name}
             </div>
-            <div className="text-[11px] text-slate-400 font-mono">
+            <div className="text-[11px] text-slate-400 font-mono hidden sm:block">
               Software Engineer
             </div>
           </div>
         </a>
 
-        {/* Desktop Links */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-8 text-sm font-medium text-slate-300">
+        {/* Desktop / Tablet Links */}
+        <nav className="hidden md:flex items-center gap-4 lg:gap-8 text-sm font-medium text-slate-300">
           <a href="#about" className="hover:text-cyan-400 transition-colors">
             About
           </a>
@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
         </nav>
 
         {/* Action CTAs */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2 lg:gap-3 flex-shrink-0">
           <a
             href={RESUME_DATA.personal.githubUrl}
             target="_blank"

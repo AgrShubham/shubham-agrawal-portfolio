@@ -476,3 +476,32 @@ Organized specifically to reinforce the **"Systems + Modern Full-Stack"** dual a
   - **Technical Benchmark:** *Pixel-perfect responsive interfaces engineered for accessibility, fluid 60fps motion, and optimal UX across all viewports in React & React Native.*
   - **Responsive Layout:** Upgraded grid to `grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5` with container width `max-w-5xl`. On 2-column mobile/tablet viewports, the 5th card spans cleanly across both columns (`sm:col-span-2 lg:col-span-1`).
 - **Verification:** Production build verified cleanly in 473ms with 0 errors. Dev server actively running at `http://localhost:5173/`.
+
+### Entry 016: Comprehensive Multi-Device Responsiveness Audit & Screen Recording Generation
+- **Date:** October 5, 2026
+- **Action:** Conducted an automated, headless browser responsiveness audit across 6 standard device viewports using `puppeteer-core` connected to local Chrome:
+  1. **Device Profiles Tested:**
+     - `01_mobile_375x812`: iPhone 13/14 portrait (375x812, 3x DPR, mobile viewport).
+     - `02_mobile_large_414x896`: iPhone 11 Pro Max / Plus portrait (414x896, 3x DPR, mobile viewport).
+     - `03_tablet_768x1024`: iPad portrait (768x1024, 2x DPR).
+     - `04_tablet_landscape_1024x768`: iPad landscape (1024x768, 2x DPR).
+     - `05_desktop_1280x800`: Standard 13" MacBook / Laptop (1280x800, 1x DPR).
+     - `06_desktop_fhd_1920x1080`: Full HD Desktop (1920x1080, 1x DPR).
+  2. **Audit Findings & Metrics:**
+     - **Horizontal Overflow:** Verified 0px horizontal overflow across all 6 viewports (`document.documentElement.scrollWidth === window.innerWidth`).
+     - **Touch Targets & Modals:** Mobile navigation drawer (`01_mobile_375x812_mobile_menu_open.png`), Certificate Lightbox, and Resume PDF modal tested with appropriate touch targets.
+  3. **Responsive Spacing Optimization ([Header.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/Header.tsx)):**
+     - Optimized tablet/laptop spacing between brand title and 5 navigation links at the 768px breakpoint:
+       - Adjusted nav item gap to `gap-4 lg:gap-8`.
+       - Adjusted CTA button gap to `gap-2 lg:gap-3`.
+       - Hid the subtitle `Software Engineer` below `sm` (`hidden sm:block`) to prevent crowding on small screens.
+       - Added `truncate` to the top recruiter banner text on mobile.
+  4. **Screen Recordings & Artifact Compilation:**
+     - Created [audit_and_record.cjs](file:///d:/PROJECTS/MyPortfolio2/audit_and_record.cjs) and [compile_recordings.py](file:///d:/PROJECTS/MyPortfolio2/compile_recordings.py).
+     - Generated full-page snapshots, hero-fold snapshots, and compiled multi-frame animated recordings:
+       - `screen_recordings/mobile_scroll_session.webp` (333 KB, animated)
+       - `screen_recordings/mobile_scroll_session.gif` (668 KB, animated)
+       - `screen_recordings/desktop_scroll_session.webp` (382 KB, animated)
+       - `screen_recordings/desktop_scroll_session.gif` (832 KB, animated)
+       - `screen_recordings/audit_report.json`
+- **Verification:** Production build verified with 0 errors in 582ms. Dev server running at `http://localhost:5173/`. All recordings compiled and saved in `screen_recordings/`.
