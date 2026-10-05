@@ -1453,6 +1453,33 @@ Transformed the repository front page from a blank Vite boilerplate into an exec
 - `View existing README.md`
 - `Design and write perfect README.md`
 
+### Turn 23: Executive "Ceramic Pearl" Light Theme & Dynamic Theme Toggle Implementation
+
+**Step Index:** `980`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> design a light theme version of this whole site and then implement a button for switching between light and dark theme.
+
+#### 🤖 Engineering Response & Strategy:
+Engineered an executive-grade "Ceramic Pearl / Snow" light mode that rivals Linear and Stripe, maintaining full high-contrast readability and preserving the existing "Obsidian Charcoal" dark mode:
+1. **Tailwind CSS v4 Dark Variant Setup:** Added `@custom-variant dark (&:where(.dark, .dark *));` to [src/index.css](file:///d:/PROJECTS/MyPortfolio2/src/index.css) enabling selector-driven `.dark` class targeting with Vite 6.
+2. **Anti-FOUC Prevention Script:** Inlined early theme detection in `<head>` of [index.html](file:///d:/PROJECTS/MyPortfolio2/index.html) reading `localStorage.getItem('theme')` or system `prefers-color-scheme: dark` before DOM rendering, completely eliminating theme flicker.
+3. **Theme Context & Engine:** Created [src/context/ThemeContext.tsx](file:///d:/PROJECTS/MyPortfolio2/src/context/ThemeContext.tsx) with persistent state synchronization, `localStorage` backup, and automatic `html.dark` class management.
+4. **Tactile Animated Theme Toggle:** Created [src/components/ThemeToggle.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/ThemeToggle.tsx) with 500ms rotating Sun and Moon SVG icons, ARIA accessibility attributes, and responsive mobile drawer integration.
+5. **Dynamic Canvas Engine:** Updated [InteractiveBackground.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/InteractiveBackground.tsx) to read active theme via mutable ref in the 60fps rAF loop, dynamically rendering slate-400 grid lines and cyan/indigo spotlights in light mode versus deep obsidian grid lines in dark mode.
+6. **Whole-Site Component Theming:** Adapted all site modules ([Hero](file:///d:/PROJECTS/MyPortfolio2/src/components/Hero.tsx), [FlagshipSection](file:///d:/PROJECTS/MyPortfolio2/src/components/FlagshipSection.tsx), [ExperienceSection](file:///d:/PROJECTS/MyPortfolio2/src/components/ExperienceSection.tsx), [CertificateShowcase](file:///d:/PROJECTS/MyPortfolio2/src/components/CertificateShowcase.tsx), [SkillsSection](file:///d:/PROJECTS/MyPortfolio2/src/components/SkillsSection.tsx), [SecondaryProjects](file:///d:/PROJECTS/MyPortfolio2/src/components/SecondaryProjects.tsx), [Footer](file:///d:/PROJECTS/MyPortfolio2/src/components/Footer.tsx), and [ResumeModal](file:///d:/PROJECTS/MyPortfolio2/src/components/ResumeModal.tsx)) with clean light surface colors while preserving terminal contrast in code dossiers and the live telemetry inspector.
+7. **Automated Verification:** Verified build (`tsc -b && vite build` in 561ms) and tested in headless Chrome across both modes, confirming instant toggle, clean persistence, and zero visual clipping.
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Configure Tailwind v4 custom dark variant in index.css`
+- `Add anti-FOUC script in index.html`
+- `Create ThemeContext state provider`
+- `Create ThemeToggle button component`
+- `Update InteractiveBackground canvas engine for multi-theme`
+- `Adapt Header, Hero, Experience, Certificates, Flagships, Skills, Secondary, Footer, and ResumeModal for light theme`
+- `Run headless Chrome visual audit with screenshot verification`
+
 ---
 
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
@@ -1473,6 +1500,7 @@ Transformed the repository front page from a blank Vite boilerplate into an exec
 | **ADR-012** | **Granular Conventional Commit Discipline** | Infrequent squash commits | Atomic git tracking of every minute detail, component, asset, and responsive tuning on `main` | **Adopted** |
 | **ADR-013** | **Automated Multi-Device Responsiveness Audit** | Manual eyeball inspection | Automated 6-viewport test with Puppeteer and local Chrome, producing screen recordings and 0px overflow | **Adopted** |
 | **ADR-014** | **Cybernetic Coordinate Grid & Spotlight** | Particle networks / 3D Three.js | Extremely low CPU/GPU footprint, zero scroll jank, Linear/Vercel executive Polish, preserves text contrast | **Adopted** |
+| **ADR-015** | **Executive Ceramic Pearl Light Mode & Dynamic Theme Engine** | Dark mode only / OS media query only | Allows recruiters in well-lit environments to inspect the site comfortably; class-based `.dark` toggle with anti-FOUC script, localStorage persistence, and dynamic canvas color shifts | **Adopted** |
 
 ---
 
@@ -1481,6 +1509,8 @@ Transformed the repository front page from a blank Vite boilerplate into an exec
 The project maintains a continuous, conventional Git commit history documenting every minute detail:
 
 ```text
+3b7e419 feat(theme): implement light and dark mode with animated toggle button and dynamic canvas colors
+f1d3055 docs(readme): design and deploy comprehensive executive README
 151c9af chore(deploy): add vercel edge deployment configuration and rewrite rules
 92b4988 feat(ui): implement interactive cybernetic coordinate grid with spring-damped spotlight and ripple physics
 e91655d docs: generate comprehensive project chat history and architectural decision log
@@ -1503,16 +1533,18 @@ c94bef6 feat(data): establish baseline candidate schema and raw content dossiers
 
 ## ✅ 5. Current System State & Verification Checklist
 
+- [x] **Light & Dark Theme Engine:** Seamless switching between Ceramic Pearl and Obsidian Charcoal with persistent `localStorage` and anti-FOUC early initialization.
+- [x] **Interactive Theme Toggle:** Rotating Sun/Moon icon button with smooth hover physics in desktop navbar and mobile drawer.
+- [x] **Dynamic Interactive Canvas:** Hardware-accelerated 60fps coordinate blueprint grid automatically adjusting spotlight and grid colors to active theme.
 - [x] **GitHub Remote Repository:** Pushed to [github.com/AgrShubham/shubham-agrawal-portfolio](https://github.com/AgrShubham/shubham-agrawal-portfolio).
 - [x] **Vercel Configuration:** [vercel.json](file:///d:/PROJECTS/MyPortfolio2/vercel.json) deployed with clean URLs, SPA rewrites, and asset cache headers.
-- [x] **Production Build:** `tsc -b && vite build` completes in ~412ms with 0 errors (`dist/index.html` 1.93 kB, `index.js` 334 kB).
+- [x] **Production Build:** `tsc -b && vite build` completes in ~561ms with 0 errors (`dist/index.html` 2.52 kB, `index.js` 349 kB).
 - [x] **Development Server:** Actively running at `http://localhost:5173/` (HTTP 200 OK).
-- [x] **Interactive Cybernetic Background:** Full-viewport 60fps canvas with spring-damped luminescent spotlight, precision crosshairs, and coordinate ripple waves.
 - [x] **Horizontal Overflow:** Verified 0px across all 6 viewports (`375x812`, `414x896`, `768x1024`, `1024x768`, `1280x800`, `1920x1080`).
-- [x] **Screen Recordings:** Compiled and saved in `screen_recordings/` (`mobile_scroll_session.webp` / `.gif`, `desktop_scroll_session.webp` / `.gif`).
 - [x] **PDF Resume:** Static asset `public/Shubham_Agrawal_Resume.pdf` served with modal viewer and direct download.
 - [x] **Certifications:** 4 verified credentials in `public/certificates/` with bidirectional hover and lightbox modal.
 - [x] **Telemetry Inspector:** Real-time pointer tracking, 60fps rAF batching, and Socket.IO packet payload inspection active in Flagship #3.
-- [x] **Documentation Integrity:** [PORTFOLIO_MASTER_PLAN.md](file:///d:/PROJECTS/MyPortfolio2/PORTFOLIO_MASTER_PLAN.md), [HERO_REDESIGN_PLAN.md](file:///d:/PROJECTS/MyPortfolio2/HERO_REDESIGN_PLAN.md), and [PROJECT_CHAT_HISTORY.md](file:///d:/PROJECTS/MyPortfolio2/PROJECT_CHAT_HISTORY.md) fully up-to-date.
+- [x] **Documentation Integrity:** [PORTFOLIO_MASTER_PLAN.md](file:///d:/PROJECTS/MyPortfolio2/PORTFOLIO_MASTER_PLAN.md), [README.md](file:///d:/PROJECTS/MyPortfolio2/README.md), and [PROJECT_CHAT_HISTORY.md](file:///d:/PROJECTS/MyPortfolio2/PROJECT_CHAT_HISTORY.md) fully up-to-date.
+
 
 

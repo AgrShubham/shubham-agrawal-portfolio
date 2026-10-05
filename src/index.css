@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -8,8 +10,6 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #080b11;
-    color: #f1f5f9;
     overflow-x: hidden;
   }
 
@@ -20,10 +20,17 @@
 
 /* Glassmorphism and ambient glow utilities */
 .glass-panel {
-  background: rgba(14, 20, 32, 0.75);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-panel {
+  background: rgba(14, 20, 32, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
 }
 
 .glass-panel-hover {
@@ -31,11 +38,21 @@
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(56, 189, 248, 0.3);
+  border-color: rgba(2, 132, 199, 0.4);
   transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.15);
+}
+
+.dark .glass-panel-hover:hover {
+  border-color: rgba(56, 189, 248, 0.3);
   box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
 }
 
 .glow-pill {
+  box-shadow: 0 0 15px -3px rgba(14, 165, 233, 0.2);
+}
+
+.dark .glow-pill {
   box-shadow: 0 0 15px -3px rgba(56, 189, 248, 0.25);
 }
+

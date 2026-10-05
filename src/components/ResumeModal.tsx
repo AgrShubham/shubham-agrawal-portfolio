@@ -32,28 +32,28 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 dark:bg-black/80 backdrop-blur-md animate-fadeIn">
       {/* Background click to dismiss */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-5xl h-[92vh] flex flex-col bg-[#0b0f17] border border-cyan-500/30 rounded-2xl shadow-2xl overflow-hidden z-10">
+      <div className="relative w-full max-w-5xl h-[92vh] flex flex-col bg-white dark:bg-[#0b0f17] border border-slate-300 dark:border-cyan-500/30 rounded-2xl shadow-2xl overflow-hidden z-10 transition-colors">
         
         {/* Modal Header */}
-        <div className="px-5 py-3.5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between gap-3">
+        <div className="px-5 py-3.5 bg-slate-50 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <div className="p-1.5 rounded-lg bg-cyan-950/80 border border-cyan-800/40 text-cyan-400">
+            <div className="p-1.5 rounded-lg bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-200 dark:border-cyan-800/40 text-cyan-700 dark:text-cyan-400">
               <FileText className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white flex items-center gap-2">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 Shubham_Agrawal_Resume.pdf
-                <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 font-normal">
+                <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-normal">
                   <CheckCircle2 className="w-3 h-3" />
                   Verified ATS Format
                 </span>
               </h3>
-              <p className="text-[11px] text-slate-400 hidden sm:block">
+              <p className="text-[11px] text-slate-600 dark:text-slate-400 hidden sm:block">
                 Software Development Engineer (SDE) • Full-Stack & Systems
               </p>
             </div>
@@ -64,7 +64,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <a
               href={resumeUrl}
               download="Shubham_Agrawal_Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white dark:bg-cyan-500 dark:hover:bg-cyan-400 dark:text-slate-950 text-xs font-bold transition-all shadow-sm"
               title="Download PDF to computer"
             >
               <Download className="w-3.5 h-3.5" />
@@ -75,7 +75,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               href={resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-300 dark:border-slate-700 transition-colors shadow-sm"
               title="Open full PDF in a new browser tab"
             >
               <ExternalLink className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors ml-1"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ml-1"
               title="Close viewer (Esc)"
               aria-label="Close"
             >
@@ -94,7 +94,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* PDF Viewer Body */}
-        <div className="flex-1 w-full h-full bg-[#111622] relative overflow-hidden">
+        <div className="flex-1 w-full h-full bg-slate-100 dark:bg-[#111622] relative overflow-hidden">
           <iframe
             src={`${resumeUrl}#toolbar=1&navpanes=0&scrollbar=1`}
             title="Shubham Agrawal Resume PDF"
@@ -103,7 +103,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Modal Footer / Mobile Fallback Notice */}
-        <div className="px-5 py-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+        <div className="px-5 py-2.5 bg-slate-50 dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-mono">
           <span className="truncate">
             Targeting SDE, Full-Stack & Systems Engineering Opportunities
           </span>
@@ -111,7 +111,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <a
               href={resumeUrl}
               download="Shubham_Agrawal_Resume.pdf"
-              className="text-cyan-400 hover:underline flex items-center gap-1"
+              className="text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1"
             >
               <Download className="w-3 h-3" />
               Direct Link

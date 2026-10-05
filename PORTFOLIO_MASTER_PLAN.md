@@ -542,6 +542,15 @@ Organized specifically to reinforce the **"Systems + Modern Full-Stack"** dual a
   5. **Directory Tree, Local Dev & Vercel Deployment Guide:** Complete file tree, installation/build commands, and 1-click Vercel edge configuration instructions.
 - **Verification:** Markdown structure verified, all links aligned. Ready for commit and GitHub push.
 
-
-
-
+### Entry 021: Executive "Ceramic Pearl" Light Theme & Dynamic Theme Toggle Implemented
+- **Date:** October 5, 2026
+- **Action:** Designed and integrated a complete, high-contrast "Ceramic Pearl / Snow" light theme alongside the existing "Obsidian Charcoal" dark theme, with a seamless, animated switching system:
+  1. **Tailwind CSS v4 Dark Variant:** Configured `@custom-variant dark (&:where(.dark, .dark *));` in [src/index.css](file:///d:/PROJECTS/MyPortfolio2/src/index.css) enabling robust class-based `.dark` selectors with Vite 6.
+  2. **Anti-FOUC Early Detection Script:** Added an inline script in [index.html](file:///d:/PROJECTS/MyPortfolio2/index.html) reading `localStorage.getItem('theme')` or matching `prefers-color-scheme: dark` before DOM rendering, preventing Flash of Unstyled Content.
+  3. **Theme Context & Engine:** Created [src/context/ThemeContext.tsx](file:///d:/PROJECTS/MyPortfolio2/src/context/ThemeContext.tsx) managing persistent state, system sync, and dynamic `document.documentElement` class synchronization.
+  4. **Tactile Theme Toggle Button:** Created [src/components/ThemeToggle.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/ThemeToggle.tsx) featuring rotating Sun/Moon SVG icons, smooth 500ms hover transitions, accessibility tooltips, and ARIA labels. Integrated in both desktop navbar and mobile drawer in [Header.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/Header.tsx).
+  5. **Dynamic Canvas Colors:** Enhanced [InteractiveBackground.tsx](file:///d:/PROJECTS/MyPortfolio2/src/components/InteractiveBackground.tsx) to read active theme via mutable ref in the 60fps rAF loop:
+     - *Light Mode:* Soft slate-400 grid lines (`rgba(100, 116, 139, 0.08)`), cyan-to-indigo gradient spotlight (`rgba(2, 132, 199, 0.11)` to `rgba(79, 70, 229, 0.06)`), azure click shockwave ripples.
+     - *Dark Mode:* Deep slate-800 grid lines (`rgba(148, 163, 184, 0.04)`), electric cyan-to-indigo spotlight, cybernetic coordinate crosshairs.
+  6. **Comprehensive Component Theming:** Updated every component across the application ([Hero](file:///d:/PROJECTS/MyPortfolio2/src/components/Hero.tsx), [FlagshipSection](file:///d:/PROJECTS/MyPortfolio2/src/components/FlagshipSection.tsx), [ExperienceSection](file:///d:/PROJECTS/MyPortfolio2/src/components/ExperienceSection.tsx), [CertificateShowcase](file:///d:/PROJECTS/MyPortfolio2/src/components/CertificateShowcase.tsx), [SkillsSection](file:///d:/PROJECTS/MyPortfolio2/src/components/SkillsSection.tsx), [SecondaryProjects](file:///d:/PROJECTS/MyPortfolio2/src/components/SecondaryProjects.tsx), [Footer](file:///d:/PROJECTS/MyPortfolio2/src/components/Footer.tsx), and [ResumeModal](file:///d:/PROJECTS/MyPortfolio2/src/components/ResumeModal.tsx)) with clean light surface colors (`bg-white/95`, `bg-slate-50`, `text-slate-900`, `text-slate-600`) while preserving code-terminal contrast inside technical dossiers and the live telemetry inspector.
+- **Verification:** Automated headless browser audit verified theme toggle, `localStorage` persistence, zero visual clipping, and clean reverse switching. Production build verified (`tsc -b && vite build` in 561ms).

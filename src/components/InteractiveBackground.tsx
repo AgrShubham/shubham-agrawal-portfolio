@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 interface Ripple {
   x: number;
@@ -10,6 +11,9 @@ interface Ripple {
 
 export const InteractiveBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const { theme } = useTheme();
+  const themeRef = useRef(theme);
+  themeRef.current = theme;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -56,16 +60,15 @@ export const InteractiveBackground: React.FC = () => {
     const handlePointerDown = (e: MouseEvent | TouchEvent) => {
       const clientX = 'touches' in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
       const clientY = 'touches' in e ? e.touches[0].clientY : (e as MouseEvent).clientY;
-      
+
       ripples.push({
         x: clientX,
         y: clientY,
         radius: 10,
         maxRadius: Math.max(width, height) * 0.45,
-        alpha: 0.65
+        alpha: 0.65,
       });
 
-      // Keep ripples array bounded
       if (ripples.length > 5) ripples.shift();
     };
 
@@ -95,9 +98,13 @@ export const InteractiveBackground: React.FC = () => {
     const render = () => {
       time += 0.015;
 
+      const isDark = themeRef.current === 'dark';
+      const baseGridColor = isDark ? 'rgba(148, 163, 184, 0.035)' : 'rgba(100, 116, 139, 0.08)';
+      const primaryColor = isDark ? '56, 189, 248' : '2, 132, 199'; // #38bdf8 vs #0284c7
+      const secondaryColor = isDark ? '99, 102, 241' : '79, 70, 229'; // #6366f1 vs #4f46e5
+
       // Ambient idle drift if no mouse movement for 2.5 seconds or mobile
       if (!isMouseActive || Date.now() - lastMouseMoveTime > 2500) {
-        // Lissajous smooth curve
         const driftX = width * 0.5 + Math.sin(time * 0.5) * (width * 0.28);
         const driftY = height * 0.38 + Math.cos(time * 0.7) * (height * 0.2);
         targetX += (driftX - targetX) * 0.03;
@@ -113,7 +120,7 @@ export const InteractiveBackground: React.FC = () => {
 
       // 1. Draw Subtle Base Grid Lines
       ctx.lineWidth = 1;
-      ctx.strokeStyle = 'rgba(148, 163, 184, 0.035)'; // very faint slate
+      ctx.strokeStyle = baseGridColor;
       ctx.beginPath();
 
       const startCol = 0;
@@ -140,11 +147,18 @@ export const InteractiveBackground: React.FC = () => {
         currentY,
         SPOTLIGHT_RADIUS
       );
-      // Electric cyan center fading to indigo
-      gradient.addColorStop(0, 'rgba(56, 189, 248, 0.12)'); // #38bdf8
-      gradient.addColorStop(0.4, 'rgba(99, 102, 241, 0.07)'); // #6366f1
-      gradient.addColorStop(0.75, 'rgba(14, 165, 233, 0.02)');
-      gradient.addColorStop(1, 'rgba(8, 11, 17, 0)');
+
+      if (isDark) {
+        gradient.addColorStop(0, 'rgba(56, 189, 248, 0.12)');
+        gradient.addColorStop(0.4, 'rgba(99, 102, 241, 0.07)');
+        gradient.addColorStop(0.75, 'rgba(14, 165, 233, 0.02)');
+        gradient.addColorStop(1, 'rgba(8, 11, 17, 0)');
+      } else {
+        gradient.addColorStop(0, 'rgba(2, 132, 199, 0.11)');
+        gradient.addColorStop(0.4, 'rgba(79, 70, 229, 0.06)');
+        gradient.addColorStop(0.75, 'rgba(14, 165, 233, 0.015)');
+        gradient.addColorStop(1, 'rgba(248, 250, 252, 0)');
+      }
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);
@@ -158,8 +172,8 @@ export const InteractiveBackground: React.FC = () => {
       for (let x = minGridX; x <= maxGridX; x += CELL_SIZE) {
         const dx = Math.abs(x - currentX);
         if (dx < SPOTLIGHT_RADIUS) {
-          const alphaFactor = Math.pow(1 - dx / SPOTLIGHT_RADIUS, 1.8) * 0.18;
-          ctx.strokeStyle = `rgba(56, 189, 248, ${alphaFactor})`;
+          const alphaFactor = Math.pow(1 - dx / SPOTLIGHT_RADIUS, 1.8) * (isDark ? 0.18 : 0.22);
+          ctx.strokeStyle = `rgba(${primaryColor}, ${alphaFactor})`;
           ctx.beginPath();
           ctx.moveTo(x, Math.max(0, currentY - SPOTLIGHT_RADIUS));
           ctx.lineTo(x, Math.min(height, currentY + SPOTLIGHT_RADIUS));
@@ -170,8 +184,8 @@ export const InteractiveBackground: React.FC = () => {
       for (let y = minGridY; y <= maxGridY; y += CELL_SIZE) {
         const dy = Math.abs(y - currentY);
         if (dy < SPOTLIGHT_RADIUS) {
-          const alphaFactor = Math.pow(1 - dy / SPOTLIGHT_RADIUS, 1.8) * 0.18;
-          ctx.strokeStyle = `rgba(99, 102, 241, ${alphaFactor})`;
+          const alphaFactor = Math.pow(1 - dy / SPOTLIGHT_RADIUS, 1.8) * (isDark ? 0.18 : 0.22);
+          ctx.strokeStyle = `rgba(${secondaryColor}, ${alphaFactor})`;
           ctx.beginPath();
           ctx.moveTo(Math.max(0, currentX - SPOTLIGHT_RADIUS), y);
           ctx.lineTo(Math.min(width, currentX + SPOTLIGHT_RADIUS), y);
@@ -187,14 +201,12 @@ export const InteractiveBackground: React.FC = () => {
           const radSq = SPOTLIGHT_RADIUS * SPOTLIGHT_RADIUS;
           if (distSq < radSq) {
             const factor = 1 - Math.sqrt(distSq) / SPOTLIGHT_RADIUS;
-            const crossAlpha = Math.pow(factor, 1.5) * 0.55;
+            const crossAlpha = Math.pow(factor, 1.5) * (isDark ? 0.55 : 0.65);
 
-            ctx.strokeStyle = `rgba(56, 189, 248, ${crossAlpha})`;
+            ctx.strokeStyle = `rgba(${primaryColor}, ${crossAlpha})`;
             ctx.beginPath();
-            // Horizontal bar of +
             ctx.moveTo(x - CROSSHAIR_SIZE, y);
             ctx.lineTo(x + CROSSHAIR_SIZE, y);
-            // Vertical bar of +
             ctx.moveTo(x, y - CROSSHAIR_SIZE);
             ctx.lineTo(x, y + CROSSHAIR_SIZE);
             ctx.stroke();
@@ -215,7 +227,7 @@ export const InteractiveBackground: React.FC = () => {
 
         // Draw Expanding Coordinate Pulse Wave
         ctx.save();
-        ctx.strokeStyle = `rgba(56, 189, 248, ${r.alpha * 0.5})`;
+        ctx.strokeStyle = `rgba(${primaryColor}, ${r.alpha * (isDark ? 0.5 : 0.65)})`;
         ctx.lineWidth = 1.5;
         ctx.setLineDash([4, 6]);
         ctx.beginPath();
@@ -225,7 +237,7 @@ export const InteractiveBackground: React.FC = () => {
 
         // Secondary soft glow ring
         ctx.save();
-        ctx.strokeStyle = `rgba(99, 102, 241, ${r.alpha * 0.25})`;
+        ctx.strokeStyle = `rgba(${secondaryColor}, ${r.alpha * (isDark ? 0.25 : 0.35)})`;
         ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.arc(r.x, r.y, Math.max(0, r.radius - 8), 0, Math.PI * 2);
@@ -248,12 +260,16 @@ export const InteractiveBackground: React.FC = () => {
     };
   }, []);
 
+  const isDark = theme === 'dark';
+
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none"
+      className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none transition-colors duration-500"
       style={{
-        background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.08), transparent 70%)',
+        background: isDark
+          ? 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.08), transparent 70%)'
+          : 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.06), transparent 70%)',
       }}
     >
       <canvas

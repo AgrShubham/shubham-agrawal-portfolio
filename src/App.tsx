@@ -8,12 +8,13 @@ import { SecondaryProjects } from './components/SecondaryProjects';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
 import { InteractiveBackground } from './components/InteractiveBackground';
+import { ThemeProvider } from './context/ThemeContext';
 
-export function App() {
+export function AppContent() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#080b11] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300 relative">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#080b11] text-slate-900 dark:text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-700 dark:selection:text-cyan-300 relative transition-colors duration-300">
       {/* Interactive Cybernetic Coordinate Grid & Luminescent Spotlight */}
       <InteractiveBackground />
 
@@ -35,6 +36,14 @@ export function App() {
       {/* Full-Screen In-Browser PDF Resume Viewer Modal */}
       <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 
