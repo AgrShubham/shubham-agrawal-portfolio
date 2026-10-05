@@ -524,6 +524,13 @@ Organized specifically to reinforce the **"Systems + Modern Full-Stack"** dual a
   4. **Ambient Idle Drift:** Lissajous oscillation smoothly sweeping the spotlight across the canvas when idle or on mobile touch viewports.
   5. **Parallax & Translucency:** Updated section wrappers across `ExperienceSection`, `SkillsSection`, `SecondaryProjects`, and `Footer` with `backdrop-blur-sm` and translucent charcoal surfaces (`/75`–`/85`), creating a silky fixed-parallax depth effect during scrolling.
   6. **Accessibility & Zero-Overhead:** `pointer-events-none` container ensures 0 interference with text selection, modals, or button interactions.
-- **Verification:** Verified with Puppeteer (`test_interactive_bg.cjs`). 0 console errors, 0 page errors. Production build verified with 0 errors in 530ms (`npm run build`). Dev server active at `http://localhost:5173/`.
+### Entry 019: Vercel Edge Hosting Configuration & GitHub Deployment Preparation
+- **Date:** October 5, 2026
+- **Action:** Formulated zero-cost global edge publishing pipeline based on user selection (Vercel target, repository `AgrShubham/shubham-agrawal-portfolio`):
+  1. Configured [vercel.json](file:///d:/PROJECTS/MyPortfolio2/vercel.json) with SPA rewrites (`/(.*) -> /`), immutable caching headers for static chunks (`max-age=31536000`), and clean URL redirects.
+  2. Prepared GitHub remote repository initialization via GitHub CLI (`gh repo create shubham-agrawal-portfolio`).
+  3. Verified build performance (`tsc -b && vite build` in 412ms).
+- **Verification:** Build clean, 0 errors. Dev server active. Ready for remote push and Vercel edge deployment.
+
 
 
