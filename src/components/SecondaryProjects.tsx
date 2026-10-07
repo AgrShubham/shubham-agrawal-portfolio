@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FolderGit2, ChevronDown, ChevronUp } from 'lucide-react';
 import { PROJECTS } from '../data/projects';
 import { GithubIcon } from './Icons';
+import { TechBadge } from './TechIcon';
 
 export const SecondaryProjects: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,12 +68,7 @@ export const SecondaryProjects: React.FC = () => {
                 <div>
                   <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800/80">
                     {project.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-900 border border-slate-200/80 dark:border-transparent text-[10px] font-mono text-slate-600 dark:text-slate-400"
-                      >
-                        {tech}
-                      </span>
+                      <TechBadge key={tech} name={tech} size="sm" />
                     ))}
                   </div>
                 </div>

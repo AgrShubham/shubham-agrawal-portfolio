@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { 
-  Terminal, 
   Copy, 
   Check, 
   ArrowDown, 
-  Activity, 
-  Cpu, 
-  Layers, 
   FileText, 
-  ShieldCheck, 
-  MonitorSmartphone 
+  ShieldCheck 
 } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
+import { TechBadge, TechIcon } from './TechIcon';
 
 interface HeroInteractiveProps {
   onOpenResume: () => void;
@@ -67,6 +63,7 @@ export const HeroInteractive: React.FC<HeroInteractiveProps> = ({ onOpenResume }
 
           {/* Primary Authority Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4 leading-[1.1] transition-colors">
+            <span className="text-sky-600 dark:text-cyan-400 font-medium">Hi, I am </span>
             {RESUME_DATA.personal.name}
           </h1>
 
@@ -118,6 +115,13 @@ export const HeroInteractive: React.FC<HeroInteractiveProps> = ({ onOpenResume }
             </button>
           </div>
 
+          {/* Interactive Core Tech Stack Badge Ribbon */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-12 max-w-3xl mx-auto">
+            {['Python', 'React 19', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Docker', 'AWS', 'Git', 'Win32 API', 'Socket.IO', 'Linux'].map((tech) => (
+              <TechBadge key={tech} name={tech} />
+            ))}
+          </div>
+
           {/* Formal Technical Core Competencies Panel */}
           <div className="rounded-2xl bg-white/95 dark:bg-[#0c1017] border border-slate-200 dark:border-slate-800 p-5 sm:p-6 text-left shadow-md dark:shadow-xl transition-colors">
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-slate-800/80 text-xs font-mono text-slate-500 dark:text-slate-400">
@@ -131,8 +135,8 @@ export const HeroInteractive: React.FC<HeroInteractiveProps> = ({ onOpenResume }
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
               {/* Pillar 1: Systems & Networking */}
               <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-[#080c14] border border-slate-200/90 dark:border-slate-800/90 hover:border-sky-500/30 dark:hover:border-cyan-500/30 transition-colors">
-                <div className="flex items-center gap-2 text-sky-600 dark:text-cyan-400 mb-2">
-                  <Activity className="w-4 h-4" />
+                <div className="flex items-center gap-2 mb-2">
+                  <TechIcon name="Python" className="w-4 h-4" />
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Low-Latency Systems</span>
                 </div>
                 <div className="text-lg font-bold text-slate-900 dark:text-white font-mono mb-1">&lt; 1 ms Latency</div>
@@ -143,8 +147,8 @@ export const HeroInteractive: React.FC<HeroInteractiveProps> = ({ onOpenResume }
 
               {/* Pillar 2: Native OS Integration */}
               <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-[#080c14] border border-slate-200/90 dark:border-slate-800/90 hover:border-indigo-500/30 transition-colors">
-                <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 mb-2">
-                  <Cpu className="w-4 h-4" />
+                <div className="flex items-center gap-2 mb-2">
+                  <TechIcon name="Windows" className="w-4 h-4" />
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">OS Subsystems</span>
                 </div>
                 <div className="text-lg font-bold text-slate-900 dark:text-white font-mono mb-1">Zero Drivers</div>
@@ -155,8 +159,8 @@ export const HeroInteractive: React.FC<HeroInteractiveProps> = ({ onOpenResume }
 
               {/* Pillar 3: Client Production Full-Stack */}
               <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-[#080c14] border border-slate-200/90 dark:border-slate-800/90 hover:border-emerald-500/30 transition-colors">
-                <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 mb-2">
-                  <Layers className="w-4 h-4" />
+                <div className="flex items-center gap-2 mb-2">
+                  <TechIcon name="React" className="w-4 h-4" />
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Client Platforms</span>
                 </div>
                 <div className="text-lg font-bold text-slate-900 dark:text-white font-mono mb-1">React 19 Core</div>
@@ -167,8 +171,8 @@ export const HeroInteractive: React.FC<HeroInteractiveProps> = ({ onOpenResume }
 
               {/* Pillar 4: Cross-Platform Runtime */}
               <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-[#080c14] border border-slate-200/90 dark:border-slate-800/90 hover:border-sky-500/30 transition-colors">
-                <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 mb-2">
-                  <Terminal className="w-4 h-4" />
+                <div className="flex items-center gap-2 mb-2">
+                  <TechIcon name="Socket.IO" className="w-4 h-4" />
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Cross-Platform OS</span>
                 </div>
                 <div className="text-lg font-bold text-slate-900 dark:text-white font-mono mb-1">Win / Mac / Linux</div>
@@ -179,8 +183,8 @@ export const HeroInteractive: React.FC<HeroInteractiveProps> = ({ onOpenResume }
 
               {/* Pillar 5: Web & Mobile Responsive UI/UX */}
               <div className="p-4 rounded-xl bg-slate-50/80 dark:bg-[#080c14] border border-slate-200/90 dark:border-slate-800/90 hover:border-amber-500/30 transition-colors sm:col-span-2 lg:col-span-1">
-                <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400 mb-2">
-                  <MonitorSmartphone className="w-4 h-4" />
+                <div className="flex items-center gap-2 mb-2">
+                  <TechIcon name="TypeScript" className="w-4 h-4" />
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">Responsive UI/UX</span>
                 </div>
                 <div className="text-lg font-bold text-slate-900 dark:text-white font-mono mb-1">Web & Mobile</div>

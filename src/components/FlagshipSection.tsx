@@ -12,6 +12,7 @@ import {
   Radio
 } from 'lucide-react';
 import { GithubIcon } from './Icons';
+import { TechBadge } from './TechIcon';
 
 export const FlagshipSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'architecture' | 'challenges' | 'math'>('architecture');
@@ -127,10 +128,8 @@ export const FlagshipSection: React.FC = () => {
 
                 {/* Tech Stack Chips */}
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {['React Native', 'TypeScript', 'Python 3', 'Win32 SendInput', 'UDP Datagrams', 'WebSockets', 'Android SDK'].map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">
-                      {tech}
-                    </span>
+                  {['React Native', 'TypeScript', 'Python', 'Win32 API', 'UDP Sockets', 'WebSockets', 'Android'].map((tech) => (
+                    <TechBadge key={tech} name={tech} />
                   ))}
                 </div>
 
@@ -323,10 +322,8 @@ export const FlagshipSection: React.FC = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {['React 19', 'TypeScript', 'Vite 6', 'Tailwind CSS', 'Web Share API', 'JSON-LD Schema', 'Client Cart'].map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">
-                      {tech}
-                    </span>
+                  {['React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Web Share API', 'JSON-LD Schema', 'Client Cart'].map((tech) => (
+                    <TechBadge key={tech} name={tech} />
                   ))}
                 </div>
 
@@ -442,10 +439,8 @@ export const FlagshipSection: React.FC = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {['JavaScript', 'rAF Event Batching', 'Subpixel Math', 'Socket.IO', 'Python Flask', 'Pynput'].map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">
-                      {tech}
-                    </span>
+                  {['JavaScript', 'rAF Event Batching', 'Subpixel Math', 'Socket.IO', 'Python', 'Pynput'].map((tech) => (
+                    <TechBadge key={tech} name={tech} />
                   ))}
                 </div>
 

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { ExternalLink, Download, Smartphone, ArrowUpRight, MousePointer } from 'lucide-react';
 import { GithubIcon } from './Icons';
+import { TechBadge } from './TechIcon';
 
 export const ProjectsSection: React.FC = () => {
   // Optional interactive pointer tracker for the trackpad demo
@@ -177,12 +178,7 @@ export const ProjectsSection: React.FC = () => {
               <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
                 <div className="flex flex-wrap gap-1.5">
                   {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-0.5 rounded text-xs font-mono bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200/80 dark:border-slate-800"
-                    >
-                      {t}
-                    </span>
+                    <TechBadge key={t} name={t} size="sm" />
                   ))}
                 </div>
 

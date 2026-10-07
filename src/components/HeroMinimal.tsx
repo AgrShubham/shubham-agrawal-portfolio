@@ -25,6 +25,7 @@ export const HeroMinimal: React.FC<HeroMinimalProps> = ({ onOpenResume }) => {
           
           <div className="space-y-2 max-w-xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              <span className="text-slate-500 dark:text-slate-400 font-normal">Hi, I am </span>
               {RESUME_DATA.personal.name}
             </h1>
             

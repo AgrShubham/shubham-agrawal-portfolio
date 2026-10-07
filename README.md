@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 Shubham Agrawal — Portfolio 2.0
+# 🌐 Shubham Agrawal — Portfolio
 ### *Software Development Engineer — Low-Latency Systems & Modern Web Platforms*
 
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
