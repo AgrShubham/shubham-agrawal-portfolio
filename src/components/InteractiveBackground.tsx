@@ -90,7 +90,6 @@ export const InteractiveBackground: React.FC = () => {
     // Grid configuration
     const CELL_SIZE = 48; // px between grid lines
     const SPOTLIGHT_RADIUS = 360; // px
-    const CROSSHAIR_SIZE = 3.5; // half-length of crosshairs
 
     // Animation Loop
     let time = 0;
@@ -193,26 +192,11 @@ export const InteractiveBackground: React.FC = () => {
         }
       }
 
-      // 4. Draw Precision Crosshairs (+) at Intersections near Spotlight
-      ctx.lineWidth = 1;
-      for (let x = minGridX; x <= maxGridX; x += CELL_SIZE) {
-        for (let y = minGridY; y <= maxGridY; y += CELL_SIZE) {
-          const distSq = (x - currentX) * (x - currentX) + (y - currentY) * (y - currentY);
-          const radSq = SPOTLIGHT_RADIUS * SPOTLIGHT_RADIUS;
-          if (distSq < radSq) {
-            const factor = 1 - Math.sqrt(distSq) / SPOTLIGHT_RADIUS;
-            const crossAlpha = Math.pow(factor, 1.5) * (isDark ? 0.55 : 0.65);
-
-            ctx.strokeStyle = `rgba(${primaryColor}, ${crossAlpha})`;
-            ctx.beginPath();
-            ctx.moveTo(x - CROSSHAIR_SIZE, y);
-            ctx.lineTo(x + CROSSHAIR_SIZE, y);
-            ctx.moveTo(x, y - CROSSHAIR_SIZE);
-            ctx.lineTo(x, y + CROSSHAIR_SIZE);
-            ctx.stroke();
-          }
-        }
-      }
+      // 4. Subtle Ambient Accent Point at Spotlight Center
+      ctx.fillStyle = `rgba(${primaryColor}, ${isDark ? 0.25 : 0.3})`;
+      ctx.beginPath();
+      ctx.arc(currentX, currentY, 2, 0, Math.PI * 2);
+      ctx.fill();
 
       // 5. Update and Render Click Ripples
       for (let i = ripples.length - 1; i >= 0; i--) {

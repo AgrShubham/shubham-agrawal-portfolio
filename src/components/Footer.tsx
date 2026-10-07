@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Copy, Check, ArrowUp, Terminal } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, ArrowUp } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
@@ -25,27 +25,27 @@ export const Footer: React.FC = () => {
           <div className="absolute top-0 right-1/4 w-96 h-48 bg-cyan-500/10 blur-[100px] pointer-events-none rounded-full" />
 
           <div className="max-w-2xl mx-auto space-y-5 relative z-10">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-200 dark:border-cyan-800/40 text-xs font-mono text-cyan-700 dark:text-cyan-400">
-              <Terminal className="w-3.5 h-3.5" />
-              <span>READY TO COLLABORATE</span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-mono text-slate-700 dark:text-slate-300">
+              <Mail className="w-3.5 h-3.5 text-sky-600 dark:text-cyan-400" />
+              <span>GET IN TOUCH</span>
             </span>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-              Let's Build Something High-Performance
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              Let's Connect & Build Together
             </h2>
 
             <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-              I am actively looking for <strong className="text-slate-900 dark:text-white">Software Development Engineer (SDE)</strong>, Full-Stack, and Systems roles. Whether you need low-latency backend pipelines, native mobile apps, or polished React 19 interfaces, my inbox is open.
+              I'm actively looking for full-time <strong className="text-slate-900 dark:text-white">Software Development Engineer (SDE)</strong>, Systems, or Full-Stack roles. If you have an opening, a question about any of my projects, or just want to talk tech, feel free to reach out.
             </p>
 
             {/* Direct Contact CTAs */}
             <div className="flex flex-wrap items-center justify-center gap-4 pt-3">
               <a
                 href={`mailto:${RESUME_DATA.personal.email}`}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white dark:from-cyan-500 dark:to-indigo-600 dark:text-slate-950 font-bold text-sm shadow-md hover:shadow-cyan-500/25 transition-all flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950 font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2"
               >
                 <Mail className="w-4 h-4" />
-                <span>Send Email</span>
+                <span>Send Me an Email</span>
               </a>
 
               <button

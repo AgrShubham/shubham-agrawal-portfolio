@@ -13,8 +13,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-[#080b11]/85 backdrop-blur-md transition-colors duration-300">
-      {/* Recruiter Fast-Bar Alert on top */}
-      <div className="bg-gradient-to-r from-sky-50 via-indigo-50/60 to-slate-100 dark:from-cyan-950/60 dark:via-indigo-950/50 dark:to-slate-900/80 px-4 py-1.5 text-xs border-b border-sky-200/60 dark:border-cyan-500/10 transition-colors">
+      {/* Top Status Banner */}
+      <div className="bg-slate-50 dark:bg-slate-900/90 px-4 py-1.5 text-xs border-b border-slate-200/80 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 truncate">
             <span className="relative flex h-2 w-2 flex-shrink-0">
@@ -22,9 +22,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="text-slate-700 dark:text-slate-300 font-medium text-[11px] sm:text-xs truncate">
-              Actively seeking <strong className="text-emerald-700 dark:text-emerald-400 font-semibold">SDE, Full-Stack & Systems</strong> roles
+              Available for full-time <strong className="text-slate-900 dark:text-white font-semibold">Software Engineering</strong> roles
             </span>
-            <span className="hidden md:inline-block text-slate-500 dark:text-slate-400 text-xs">• Open to Relocation & Remote</span>
+            <span className="hidden md:inline-block text-slate-500 dark:text-slate-400 text-xs">• Indore, India • Open to Remote & Relocation</span>
           </div>
 
           <div className="flex items-center gap-4 flex-shrink-0">
