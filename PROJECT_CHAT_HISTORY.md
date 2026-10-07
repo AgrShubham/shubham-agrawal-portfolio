@@ -41,6 +41,7 @@
    - [Turn 25: Full Humanization & De-AI Overhaul (Option A)](#turn-25-full-humanization-&-de-ai-overhaul-option-a)
    - [Turn 26: Complete Pivot to Minimalist Software Craftsman Architecture](#turn-26-complete-pivot-to-minimalist-software-craftsman-architecture)
    - [Turn 27: Visual Depth Upgrade — Connected-Node Timeline for Experience & Education (Step 2 Only)](#turn-27-visual-depth-upgrade--connected-node-timeline-for-experience--education-step-2-only)
+   - [Turn 28: Dual-Mode Architecture (⚡ Interactive vs 📄 Minimalist Switch)](#turn-28-dual-mode-architecture--interactive-vs--minimalist-switch)
 3. [Master Architectural Decision Records (ADRs) Summary](#-3-master-architectural-decision-records-adrs-summary)
 4. [Complete Git Commit Log](#-4-complete-git-commit-log)
 5. [Current System State & Verification Checklist](#-5-current-system-state--verification-checklist)
@@ -1595,6 +1596,45 @@ Addressed the flat/plain appearance that resulted from stripping away the previo
 - `Automate headless Chrome screenshot capture of #experience and #education in light and dark mode`
 - `Commit and push to origin/experimental`
 
+### Turn 28: Dual-Mode Architecture (⚡ Interactive vs 📄 Minimalist Switch)
+
+**Step Index:** `1200`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> Can we implement a switch button for seeing a intractive version and an simplistic version? What are ur thaughts?  
+> [Audio note: Exploring toggle switch between deployed main version and simplistic pattern]  
+> User confirmed: "yes"
+
+#### 🤖 Engineering Response & Strategy:
+Engineered an elite dual-mode view architecture giving visitors and recruiters full control over their visual and reading experience:
+1. **ViewModeContext State Engine:** Implemented [ViewModeContext.tsx](file:///d:/PROJECTS/MyPortfolio2/src/context/ViewModeContext.tsx) with persistent `localStorage` cache and instant deep-linking via URL query params (`?view=interactive` vs `?view=minimalist`).
+2. **Interactive Mode (High-Tech Obsidian Edition):**
+   - Active dynamic 60fps coordinate blueprint canvas with cursor spotlight physics (`InteractiveBackground.tsx`).
+   - Executive FAANG/SDE Hero (`HeroInteractive.tsx`) featuring 5-Pillar Technical Competency Architecture grid, candidate avatar portrait, and ATS Curriculum Vitae CTAs.
+   - Deep-dive flagship systems showcase (`FlagshipSection.tsx`) with real-time pointer gesture telemetry, Socket.IO packet inspector, and terminal architecture tabs.
+   - Expandable secondary exploration tools drawer (`SecondaryProjects.tsx`).
+3. **Minimalist Mode (Authentic Software Craftsman Edition):**
+   - Pure, distraction-free reading surface with canvas unmounted for rapid page scanning.
+   - Human-centric personal hero (`HeroMinimal.tsx`) featuring genuine candidate photo, direct email/social links, and authentic engineering summary.
+   - Clean 5-project showcase (`ProjectsSection.tsx`) with honest problem/solution lab notes and direct binary/GitHub downloads.
+4. **Shared High-Craft Foundations:**
+   - Both modes share the newly built connected-node timeline in `ExperienceSection.tsx` and `EducationSection.tsx` with the CSI Udaan 2024 trophy banner and verified certifications lightbox.
+   - Both modes fully support Dark Mode and Ceramic Pearl Light Mode (producing 4 seamless visual combinations: Interactive Dark, Interactive Light, Minimal Dark, Minimal Light).
+5. **Navbar & Mobile Drawer Segmented Controls:**
+   - Desktop: Apple/Linear-style segmented pill toggle `[ ⚡ Interactive | 📄 Minimalist ]` right in the sticky header.
+   - Mobile: Compact view badge in sticky navbar + full-width segmented switcher in the mobile slide-down drawer.
+6. **Automated Headless Chrome Audit:** Ran comprehensive matrix tests verifying all 4 combinations and mobile viewports with 0 console warnings and sub-400ms production builds.
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Create ViewModeContext.tsx with query param and localStorage synchronization`
+- `Extract HeroMinimal.tsx and build HeroInteractive.tsx with avatar integration`
+- `Update Header.tsx with desktop segmented pill switch and mobile drawer toggle`
+- `Re-architect App.tsx to dynamically mount background, hero, and project showcases`
+- `Verify TypeScript compilation (tsc -b && vite build)`
+- `Capture headless Chrome test matrix across all 4 modes and mobile viewports`
+- `Commit and push to experimental branch`
+
 ---
 
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
@@ -1620,6 +1660,7 @@ Addressed the flat/plain appearance that resulted from stripping away the previo
 | **ADR-017** | **Human-Centric Craft & Authentic Engineering Voice** | Generic AI bento grids & buzzwords | Replaces corporate AI prose with authentic first-person storytelling, personal avatar, and lab notes explaining why software was built and what broke | **Adopted** |
 | **ADR-018** | **Minimalist Software Craftsman Architecture** | Cybernetic canvas grids & code terminals | Complete elimination of synthetic AI tropes; pure typography, real portrait photo, and exact alignment with authentic resume data | **Adopted** |
 | **ADR-019** | **Connected-Node Editorial Timeline & Surface Depth** | Flat plain text lists / Neon glowing glassmorphism | Introduces architectural surface elevation (#111115 / #ffffff) and a continuous connecting vertical node line, avoiding both sterile flatness and tacky cybernetic AI glows | **Adopted** |
+| **ADR-020** | **Dual-Mode Interactive / Minimalist Switching** | Forcing single polarizing aesthetic | Solves the Recruiter vs Peer dichotomy; provides instant 1-click toggle between full interactive systems showcase and distraction-free editorial resume view | **Adopted** |
 
 ---
 
@@ -1628,6 +1669,7 @@ Addressed the flat/plain appearance that resulted from stripping away the previo
 The project maintains a continuous, conventional Git commit history documenting every minute detail:
 
 ```text
+4588dc3 feat(view-mode): implement dual-mode toggle switch for Interactive and Minimalist versions
 0d106fc feat(timeline): upgrade Experience and Education with connected-node timeline and elevated CSI award banner
 64493be feat(craftsman): pivot to Minimalist Software Craftsman design matching authentic resume reality
 277c441 docs: record Turn 25 and ADR-017 for humanization overhaul
