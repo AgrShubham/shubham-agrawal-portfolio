@@ -1685,6 +1685,40 @@ Executed a comprehensive brand iconography and hero identity enhancement:
 
 ---
 
+### Turn 30: Promotion of Experimental Branch to Production Main & Archival of V1 Deployed Version
+
+**Step Index:** `1420`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> Can u make the experimental branch the main one and make the current main one as the experimental one or another test branch?
+
+#### 🤖 Engineering Response & Strategy:
+Executed safe promotion and archival branch choreography:
+1. **Preserved Original Deployed V1 State in Dedicated Test Branch:**
+   - Created branch `test-v1-main` at commit `70d60095c4cc9c715686a5dfb911c776afa6333e` (the original production state).
+   - Pushed `test-v1-main` to remote `origin/test-v1-main`, permanently securing the v1 deployment for reference or rollback.
+2. **Promoted Experimental to Production Main:**
+   - Checked out `main` and performed a clean fast-forward merge of `experimental` (`f7858f5`), unifying all recent enhancements:
+     - ⚡ Interactive vs 📄 Minimalist dual-mode view switcher with persistent `localStorage` and query param sync.
+     - 🏷️ Official brand SVG tech stack icons via `react-icons` across the hero ribbon, flagships, secondary drawer, and skills matrix.
+     - 👤 Authentic candidate portrait and "Hi, I am Shubham Agrawal" greeting across all hero variants.
+     - 🎓 Connected-node timeline in Experience and Education with the CSI Udaan 2024 trophy banner.
+3. **Production Validation & Edge Deployment:**
+   - Ran `npm run build` on `main` (`tsc -b && vite build`) — passed cleanly in 612ms with 0 errors.
+   - Pushed `main` to `origin/main` to trigger live production deployment on Vercel.
+4. **Synchronized Active Working Branches:**
+   - Kept `experimental` synced with `main` to serve as the ongoing workspace for upcoming experimental features.
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Create local test-v1-main branch from commit 70d6009`
+- `Push test-v1-main to origin/test-v1-main`
+- `Checkout main and execute git merge --ff-only experimental`
+- `Verify production build on main (tsc -b && vite build)`
+- `Push updated main to origin/main`
+
+---
+
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
 
 | ADR ID | Core Architectural Decision | Alternative Considered | Engineering Rationale | Status |
@@ -1718,8 +1752,12 @@ Executed a comprehensive brand iconography and hero identity enhancement:
 The project maintains a continuous, conventional Git commit history documenting every minute detail:
 
 ```text
+f7858f5 feat(icons): add 'Hi, I am' hero greeting and integrate react-icons brand badges across interactive and minimalist views
+c5c9cc8 docs: record Turn 28 and ADR-020 for Dual-Mode architecture
 4588dc3 feat(view-mode): implement dual-mode toggle switch for Interactive and Minimalist versions
+1f22284 docs: document Turn 27 and ADR-019 for Step 2 visual upgrade
 0d106fc feat(timeline): upgrade Experience and Education with connected-node timeline and elevated CSI award banner
+74b58f9 docs: record Turn 26 and ADR-018 for Minimalist Craftsman pivot
 64493be feat(craftsman): pivot to Minimalist Software Craftsman design matching authentic resume reality
 277c441 docs: record Turn 25 and ADR-017 for humanization overhaul
 e692f8d refactor(humanize): rewrite copy into authentic engineer voice, redesign hero with personal profile and craft focus, and tone down AI tropes
@@ -1748,7 +1786,9 @@ c94bef6 feat(data): establish baseline candidate schema and raw content dossiers
 
 ## ✅ 5. Current System State & Verification Checklist
 
-- [x] **Git Branch Isolation:** Currently checked out on branch `experimental` tracking `origin/experimental`. Live Vercel production remains shielded on `main`.
+- [x] **Production Main Deployment:** Branch `main` promoted to latest state (`f7858f5`) with Dual-Mode, brand tech icons, "Hi, I am", and connected-node timeline, actively deploying on Vercel.
+- [x] **Archival Test Branch:** Dedicated branch `test-v1-main` created at `70d6009` and pushed to remote `origin/test-v1-main` preserving the initial v1 deployment.
+- [x] **Experimental Branch:** Branch `experimental` kept in lockstep with `main` for subsequent experimental feature development.
 - [x] **Light & Dark Theme Engine:** Seamless switching between Ceramic Pearl and Obsidian Charcoal with persistent `localStorage` and anti-FOUC early initialization.
 - [x] **Interactive Theme Toggle:** Rotating Sun/Moon icon button with smooth hover physics in desktop navbar and mobile drawer.
 - [x] **Dynamic Interactive Canvas:** Hardware-accelerated 60fps coordinate blueprint grid automatically adjusting spotlight and grid colors to active theme.
