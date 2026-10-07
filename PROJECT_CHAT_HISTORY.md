@@ -40,6 +40,7 @@
    - [Turn 24: Experimental Git Branch Isolation Strategy](#turn-24-experimental-git-branch-isolation-strategy)
    - [Turn 25: Full Humanization & De-AI Overhaul (Option A)](#turn-25-full-humanization-&-de-ai-overhaul-option-a)
    - [Turn 26: Complete Pivot to Minimalist Software Craftsman Architecture](#turn-26-complete-pivot-to-minimalist-software-craftsman-architecture)
+   - [Turn 27: Visual Depth Upgrade — Connected-Node Timeline for Experience & Education (Step 2 Only)](#turn-27-visual-depth-upgrade--connected-node-timeline-for-experience--education-step-2-only)
 3. [Master Architectural Decision Records (ADRs) Summary](#-3-master-architectural-decision-records-adrs-summary)
 4. [Complete Git Commit Log](#-4-complete-git-commit-log)
 5. [Current System State & Verification Checklist](#-5-current-system-state--verification-checklist)
@@ -1570,6 +1571,30 @@ Executed a total architectural pivot from the "AI cybernetic template" paradigm 
 - `Verify build and capture Chrome audit screenshots`
 - `Commit and push to experimental branch`
 
+### Turn 27: Visual Depth Upgrade — Connected-Node Timeline for Experience & Education (Step 2 Only)
+
+**Step Index:** `1150`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> how can we now make it visually more appealing?  
+> step 2 only
+
+#### 🤖 Engineering Response & Strategy:
+Addressed the flat/plain appearance that resulted from stripping away the previous AI tropes, specifically executing **Step 2 only** (Experience & Education sections) with subtle architectural surface depth while preserving complete authenticity:
+1. **Connected-Node Vertical Timeline:** Replaced flat text lists with an editorial vertical line and circular status nodes marking career and academic milestones.
+2. **Elevated Architectural Cards:** Used refined background tones (`#111115` on `#0a0a0a` in dark mode, `#ffffff` on `#fafafa` in light mode) with crisp border definition (`border-slate-200/90 dark:border-white/[0.08]`) to give tactile depth without neon glow gimmicks.
+3. **CSI Udaan 2024 Award Banner:** Prominently elevated the 2nd Position regional CSI exhibition award inside Education with an amber/gold trophy badge and clear project attribution (Remote Trackpad & Gamepad).
+4. **Verified Industry Certifications Grid:** Neatly structured AWS Academy and LinkedIn Learning certifications with interactive lightbox preview modals.
+5. **Rigorous Build & Visual Validation:** Compiled clean TypeScript (`tsc -b && vite build`), ran headless Chrome Puppeteer audit capturing dark and light mode screenshots, and verified zero visual regression.
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Rebuild ExperienceSection.tsx with connected-node timeline, CheckCircle2 metrics, and tech tags`
+- `Rebuild EducationSection.tsx with node timeline, CSI Udaan 2024 trophy banner, and cert preview grid`
+- `Verify TypeScript build with noUnusedLocals: true`
+- `Automate headless Chrome screenshot capture of #experience and #education in light and dark mode`
+- `Commit and push to origin/experimental`
+
 ---
 
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
@@ -1594,6 +1619,7 @@ Executed a total architectural pivot from the "AI cybernetic template" paradigm 
 | **ADR-016** | **Experimental Git Branch Isolation** | Direct commits on `main` | Protects live Vercel production deployment from untested changes; all experimental work is isolated on `experimental` | **Adopted** |
 | **ADR-017** | **Human-Centric Craft & Authentic Engineering Voice** | Generic AI bento grids & buzzwords | Replaces corporate AI prose with authentic first-person storytelling, personal avatar, and lab notes explaining why software was built and what broke | **Adopted** |
 | **ADR-018** | **Minimalist Software Craftsman Architecture** | Cybernetic canvas grids & code terminals | Complete elimination of synthetic AI tropes; pure typography, real portrait photo, and exact alignment with authentic resume data | **Adopted** |
+| **ADR-019** | **Connected-Node Editorial Timeline & Surface Depth** | Flat plain text lists / Neon glowing glassmorphism | Introduces architectural surface elevation (#111115 / #ffffff) and a continuous connecting vertical node line, avoiding both sterile flatness and tacky cybernetic AI glows | **Adopted** |
 
 ---
 
@@ -1602,6 +1628,7 @@ Executed a total architectural pivot from the "AI cybernetic template" paradigm 
 The project maintains a continuous, conventional Git commit history documenting every minute detail:
 
 ```text
+0d106fc feat(timeline): upgrade Experience and Education with connected-node timeline and elevated CSI award banner
 64493be feat(craftsman): pivot to Minimalist Software Craftsman design matching authentic resume reality
 277c441 docs: record Turn 25 and ADR-017 for humanization overhaul
 e692f8d refactor(humanize): rewrite copy into authentic engineer voice, redesign hero with personal profile and craft focus, and tone down AI tropes
