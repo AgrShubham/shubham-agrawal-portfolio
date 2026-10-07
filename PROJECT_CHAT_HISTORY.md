@@ -38,6 +38,7 @@
    - [Turn 22: Executive README.md Architectural Design & Deployment](#turn-22-executive-readmemd-architectural-design-&-deployment)
    - [Turn 23: Executive "Ceramic Pearl" Light Theme & Dynamic Theme Toggle Implementation](#turn-23-executive-ceramic-pearl-light-theme-&-dynamic-theme-toggle-implementation)
    - [Turn 24: Experimental Git Branch Isolation Strategy](#turn-24-experimental-git-branch-isolation-strategy)
+   - [Turn 25: Full Humanization & De-AI Overhaul (Option A)](#turn-25-full-humanization-&-de-ai-overhaul-option-a)
 3. [Master Architectural Decision Records (ADRs) Summary](#-3-master-architectural-decision-records-adrs-summary)
 4. [Complete Git Commit Log](#-4-complete-git-commit-log)
 5. [Current System State & Verification Checklist](#-5-current-system-state--verification-checklist)
@@ -1503,6 +1504,36 @@ Enforced production environment isolation by branching off from `main`:
 - `Push branch to origin and establish upstream tracking`
 - `Document Turn 24 and ADR-016 in PROJECT_CHAT_HISTORY.md`
 
+### Turn 25: Full Humanization & De-AI Overhaul (Option A)
+
+**Step Index:** `1050`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> I got feedbacks from my friends that this looks like an ai generated portfolio site I did n't liked this reply how can we fix that?
+> [Selected: Option A — Full Humanization]
+
+#### 🤖 Engineering Response & Strategy:
+Diagnosed and dismantled the 5 primary "AI template" tell-tale signs:
+1. **Human Profile & Avatar System:** Added an authentic portrait avatar card to the hero with automatic image loading from `/profile.jpg` and a custom monogram fallback (`SA Engineer`), status badge, and location badge (`Indore, India`).
+2. **First-Person Grounded Voice:** Completely eliminated grandiose AI jargon ("FLAGSHIP SHOWSTOPPER", "Sole Systems Architect", "Technical Competency Architecture", "Verified Engineering Benchmarks"). Replaced with natural, conversational, and direct engineering storytelling.
+3. **Hero Bento Grid Deconstruction:** Replaced the generic 5-box AI bento grid with an editorial 3-pillar layout focusing on Systems & Protocols, Modern Web & React 19, and Regional Recognition (2nd Prize at CSI Udaan 2024).
+4. **Project Engineering Case Studies:** Restructured flagship projects into authentic lab notes detailing:
+   - *Why I Built This* (real personal motivations, e.g. wireless mouse dying during exams).
+   - *The Hardest Problem & Breakthrough* (Wi-Fi TCP Head-of-Line blocking vs. 12-byte raw UDP streaming).
+   - Practical trade-offs and zero-install user-space Win32 execution.
+5. **Background HUD De-escalation:** Removed harsh sci-fi crosshairs `+` and coordinate numbers from the interactive canvas, transitioning the background to a quiet, sophisticated studio blueprint spotlight.
+6. **Visual Verification:** Automated screenshot captures across light and dark themes using headless Chrome, confirming warm visual hierarchy, zero visual bugs, and high-craft human polish.
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Redesign Hero.tsx with human bio, avatar support, and 3 craft cards`
+- `Tone down InteractiveBackground.tsx canvas HUD crosshairs`
+- `Rewrite FlagshipSection.tsx into honest engineering case studies`
+- `Clean up Header.tsx and Footer.tsx copy and CTA styles`
+- `Compile and verify production build (tsc -b && vite build)`
+- `Capture and inspect Chrome screenshots in light and dark mode`
+- `Commit and push to experimental branch`
+
 ---
 
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
@@ -1525,6 +1556,7 @@ Enforced production environment isolation by branching off from `main`:
 | **ADR-014** | **Cybernetic Coordinate Grid & Spotlight** | Particle networks / 3D Three.js | Extremely low CPU/GPU footprint, zero scroll jank, Linear/Vercel executive Polish, preserves text contrast | **Adopted** |
 | **ADR-015** | **Executive Ceramic Pearl Light Mode & Dynamic Theme Engine** | Dark mode only / OS media query only | Allows recruiters in well-lit environments to inspect the site comfortably; class-based `.dark` toggle with anti-FOUC script, localStorage persistence, and dynamic canvas color shifts | **Adopted** |
 | **ADR-016** | **Experimental Git Branch Isolation** | Direct commits on `main` | Protects live Vercel production deployment from untested changes; all experimental work is isolated on `experimental` | **Adopted** |
+| **ADR-017** | **Human-Centric Craft & Authentic Engineering Voice** | Generic AI bento grids & buzzwords | Replaces corporate AI prose with authentic first-person storytelling, personal avatar, and lab notes explaining why software was built and what broke | **Adopted** |
 
 ---
 
@@ -1533,7 +1565,9 @@ Enforced production environment isolation by branching off from `main`:
 The project maintains a continuous, conventional Git commit history documenting every minute detail:
 
 ```text
-3b7e419 feat(theme): implement light and dark mode with animated toggle button and dynamic canvas colors
+e692f8d refactor(humanize): rewrite copy into authentic engineer voice, redesign hero with personal profile and craft focus, and tone down AI tropes
+83f633b docs: establish experimental branch isolation and update project chat history
+70d6009 feat(theme): implement light and dark mode with animated toggle button and dynamic canvas colors
 f1d3055 docs(readme): design and deploy comprehensive executive README
 151c9af chore(deploy): add vercel edge deployment configuration and rewrite rules
 92b4988 feat(ui): implement interactive cybernetic coordinate grid with spring-damped spotlight and ripple physics
