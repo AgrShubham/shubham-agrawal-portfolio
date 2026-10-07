@@ -36,6 +36,8 @@
    - [Turn 20: Interactive Cybernetic Coordinate Grid & Luminescent Spotlight Implementation](#turn-20-interactive-cybernetic-coordinate-grid-&-luminescent-spotlight-implementation)
    - [Turn 21: GitHub Repository Initialization & Vercel Edge Hosting Configuration](#turn-21-github-repository-initialization-&-vercel-edge-hosting-configuration)
    - [Turn 22: Executive README.md Architectural Design & Deployment](#turn-22-executive-readmemd-architectural-design-&-deployment)
+   - [Turn 23: Executive "Ceramic Pearl" Light Theme & Dynamic Theme Toggle Implementation](#turn-23-executive-ceramic-pearl-light-theme-&-dynamic-theme-toggle-implementation)
+   - [Turn 24: Experimental Git Branch Isolation Strategy](#turn-24-experimental-git-branch-isolation-strategy)
 3. [Master Architectural Decision Records (ADRs) Summary](#-3-master-architectural-decision-records-adrs-summary)
 4. [Complete Git Commit Log](#-4-complete-git-commit-log)
 5. [Current System State & Verification Checklist](#-5-current-system-state--verification-checklist)
@@ -1480,6 +1482,27 @@ Engineered an executive-grade "Ceramic Pearl / Snow" light mode that rivals Line
 - `Adapt Header, Hero, Experience, Certificates, Flagships, Skills, Secondary, Footer, and ResumeModal for light theme`
 - `Run headless Chrome visual audit with screenshot verification`
 
+### Turn 24: Experimental Git Branch Isolation Strategy
+
+**Step Index:** `1020`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> Now any changes we make in this project from now would go to a new git branch as all the changes now would be termed as test or experimental as I do not want to disturb the already deployed site.
+
+#### 🤖 Engineering Response & Strategy:
+Enforced production environment isolation by branching off from `main`:
+1. **Branch Creation & Switch:** Created and checked out a dedicated feature branch `experimental` via `git checkout -b experimental`.
+2. **Remote Origin Synchronization:** Pushed the new branch to remote tracking on GitHub with upstream configuration `git push -u origin experimental`.
+3. **Continuous Deployment Protection:** Vercel edge deployment remains locked to `main` at [shubham-agrawal-portfolio.vercel.app](https://shubham-agrawal-portfolio.vercel.app), guaranteeing that ongoing exploratory work, refactoring, and prototype features will never degrade the live recruiter-facing environment.
+4. **Change Management Protocol:** All subsequent commits, component tests, and experiments will be committed solely to `experimental`.
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Check git branch status on main`
+- `Create and switch to branch: experimental`
+- `Push branch to origin and establish upstream tracking`
+- `Document Turn 24 and ADR-016 in PROJECT_CHAT_HISTORY.md`
+
 ---
 
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
@@ -1501,6 +1524,7 @@ Engineered an executive-grade "Ceramic Pearl / Snow" light mode that rivals Line
 | **ADR-013** | **Automated Multi-Device Responsiveness Audit** | Manual eyeball inspection | Automated 6-viewport test with Puppeteer and local Chrome, producing screen recordings and 0px overflow | **Adopted** |
 | **ADR-014** | **Cybernetic Coordinate Grid & Spotlight** | Particle networks / 3D Three.js | Extremely low CPU/GPU footprint, zero scroll jank, Linear/Vercel executive Polish, preserves text contrast | **Adopted** |
 | **ADR-015** | **Executive Ceramic Pearl Light Mode & Dynamic Theme Engine** | Dark mode only / OS media query only | Allows recruiters in well-lit environments to inspect the site comfortably; class-based `.dark` toggle with anti-FOUC script, localStorage persistence, and dynamic canvas color shifts | **Adopted** |
+| **ADR-016** | **Experimental Git Branch Isolation** | Direct commits on `main` | Protects live Vercel production deployment from untested changes; all experimental work is isolated on `experimental` | **Adopted** |
 
 ---
 
@@ -1533,6 +1557,7 @@ c94bef6 feat(data): establish baseline candidate schema and raw content dossiers
 
 ## ✅ 5. Current System State & Verification Checklist
 
+- [x] **Git Branch Isolation:** Currently checked out on branch `experimental` tracking `origin/experimental`. Live Vercel production remains shielded on `main`.
 - [x] **Light & Dark Theme Engine:** Seamless switching between Ceramic Pearl and Obsidian Charcoal with persistent `localStorage` and anti-FOUC early initialization.
 - [x] **Interactive Theme Toggle:** Rotating Sun/Moon icon button with smooth hover physics in desktop navbar and mobile drawer.
 - [x] **Dynamic Interactive Canvas:** Hardware-accelerated 60fps coordinate blueprint grid automatically adjusting spotlight and grid colors to active theme.
