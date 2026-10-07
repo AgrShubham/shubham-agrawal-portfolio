@@ -39,6 +39,7 @@
    - [Turn 23: Executive "Ceramic Pearl" Light Theme & Dynamic Theme Toggle Implementation](#turn-23-executive-ceramic-pearl-light-theme-&-dynamic-theme-toggle-implementation)
    - [Turn 24: Experimental Git Branch Isolation Strategy](#turn-24-experimental-git-branch-isolation-strategy)
    - [Turn 25: Full Humanization & De-AI Overhaul (Option A)](#turn-25-full-humanization-&-de-ai-overhaul-option-a)
+   - [Turn 26: Complete Pivot to Minimalist Software Craftsman Architecture](#turn-26-complete-pivot-to-minimalist-software-craftsman-architecture)
 3. [Master Architectural Decision Records (ADRs) Summary](#-3-master-architectural-decision-records-adrs-summary)
 4. [Complete Git Commit Log](#-4-complete-git-commit-log)
 5. [Current System State & Verification Checklist](#-5-current-system-state--verification-checklist)
@@ -1534,6 +1535,41 @@ Diagnosed and dismantled the 5 primary "AI template" tell-tale signs:
 - `Capture and inspect Chrome screenshots in light and dark mode`
 - `Commit and push to experimental branch`
 
+### Turn 26: Complete Pivot to Minimalist Software Craftsman Architecture
+
+**Step Index:** `1100`  
+**Participant:** User (Shubham Agrawal) & Antigravity IDE Assistant  
+
+#### 👤 User Request:
+> I am still not satisfied!
+> [Selected: Minimalist Software Craftsman — Strip away all grids, neon glows, and code terminal boxes. Align structure with the clean, professional reality of actual resume and projects.]
+
+#### 🤖 Engineering Response & Strategy:
+Executed a total architectural pivot from the "AI cybernetic template" paradigm to an authentic, high-craft editorial portfolio (Paco Coursey / Lee Robinson aesthetic):
+1. **Dismantled Sci-Fi Cybernetic Tropes:** Completely removed `<InteractiveBackground />` canvas, laser cursor spotlights, glowing border cards, radar badges, and synthetic syntax-highlighted code terminals.
+2. **Prominent Real Portrait Photo:** Integrated the candidate's authentic high-resolution professional portrait (`public/profile.jpg`) directly into the hero with subtle ring styling and availability status.
+3. **Resume-Accurate Information Hierarchy:** Re-anchored the entire site structure to match the candidate's genuine resume (`Shubham_Agrawal_Resume.pdf`):
+   - **Hero:** Name, role, location, authentic summary, direct links (GitHub, LinkedIn, Email), and ATS PDF modal trigger.
+   - **Experience:** Clean chronological entry for Amnesea Frontend Internship with verified metrics (35% page-load reduction, 20% mobile engagement increase).
+   - **Projects:** Unified showcase presenting all 5 projects (Remote Trackpad App, Remote Trackpad Web, Shree Mewa, Chef Claude, Meme Generator) with direct GitHub and binary download links, plus an unobtrusive live pointer tracker for the web trackpad.
+   - **Skills:** Multi-column categorizations matching the exact resume taxonomy (Languages, Frontend, Backend & Networking, Databases & Cloud, Developer Tools, Core CS).
+   - **Education & Credentials:** IPS Academy B.Tech, 2nd Position CSI Udaan '24 award, and verified certifications with Credly verification and lightbox modal.
+   - **Footer:** Clean, minimalist contact channel and back-to-top trigger.
+4. **Performance & Bundle Optimization:** Bundle size dropped from 350 kB to 265 kB; production build compiles in ~460ms with zero errors.
+5. **Headless Chrome Visual Audit:** Verified responsive rendering across light (clean paper white) and dark (deep rich `#0a0a0a`) themes.
+
+#### 🛠️ Tool Operations Executed in this Step:
+- `Remove InteractiveBackground canvas from App.tsx`
+- `Implement Minimalist Craftsman Header.tsx without spammy banners`
+- `Integrate candidate profile.jpg into clean typographic Hero.tsx`
+- `Streamline ExperienceSection.tsx to match authentic resume bullets`
+- `Create unified ProjectsSection.tsx presenting all 5 projects with binary downloads`
+- `Align SkillsSection.tsx directly with resumeData taxonomy`
+- `Build EducationSection.tsx with verified credentials and certificate modal`
+- `Minimalize Footer.tsx with clean contact row`
+- `Verify build and capture Chrome audit screenshots`
+- `Commit and push to experimental branch`
+
 ---
 
 ## 🏛️ 3. Master Architectural Decision Records (ADRs) Summary
@@ -1557,6 +1593,7 @@ Diagnosed and dismantled the 5 primary "AI template" tell-tale signs:
 | **ADR-015** | **Executive Ceramic Pearl Light Mode & Dynamic Theme Engine** | Dark mode only / OS media query only | Allows recruiters in well-lit environments to inspect the site comfortably; class-based `.dark` toggle with anti-FOUC script, localStorage persistence, and dynamic canvas color shifts | **Adopted** |
 | **ADR-016** | **Experimental Git Branch Isolation** | Direct commits on `main` | Protects live Vercel production deployment from untested changes; all experimental work is isolated on `experimental` | **Adopted** |
 | **ADR-017** | **Human-Centric Craft & Authentic Engineering Voice** | Generic AI bento grids & buzzwords | Replaces corporate AI prose with authentic first-person storytelling, personal avatar, and lab notes explaining why software was built and what broke | **Adopted** |
+| **ADR-018** | **Minimalist Software Craftsman Architecture** | Cybernetic canvas grids & code terminals | Complete elimination of synthetic AI tropes; pure typography, real portrait photo, and exact alignment with authentic resume data | **Adopted** |
 
 ---
 
@@ -1565,6 +1602,8 @@ Diagnosed and dismantled the 5 primary "AI template" tell-tale signs:
 The project maintains a continuous, conventional Git commit history documenting every minute detail:
 
 ```text
+64493be feat(craftsman): pivot to Minimalist Software Craftsman design matching authentic resume reality
+277c441 docs: record Turn 25 and ADR-017 for humanization overhaul
 e692f8d refactor(humanize): rewrite copy into authentic engineer voice, redesign hero with personal profile and craft focus, and tone down AI tropes
 83f633b docs: establish experimental branch isolation and update project chat history
 70d6009 feat(theme): implement light and dark mode with animated toggle button and dynamic canvas colors
